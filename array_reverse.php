@@ -1,0 +1,31 @@
+<?php
+print("值日生<br>");
+$duty=array(0,2,3,4,5,6,7,8,9,11,12,13,14,15,16,18,19,20,21,23,24,25);
+shuffle($duty);
+for($i=0;$i<22;$i=$i+2){print($duty[$i].",".$duty[$i+1]."<br>");}
+shuffle($duty);
+for($i=0;$i<22;$i=$i+2){print($duty[$i].",".$duty[$i+1]."<br>");}
+?>
+<hr>
+<?php
+$a=array('甲','乙','丙','丁','戊','己','庚','辛','壬','癸');
+$b=array('子','丑','寅','卯','辰','巳','午','未','申','酉','戌','亥');
+$year=(int)-10016;
+$inputyear=(int)2022;
+$up=(int)(abs($inputyear-$year)%60)%10;
+$low=(int)(abs($inputyear-$year)%60)%12;
+print($a[$up].$b[$low]."年");
+?>
+<hr>
+<?php
+$reve=array(1,2,3,4,5,6,7,8,9,10);
+print_r($reve);
+count($reve)%2 ? $times=(count($reve)-1)/2 : $times=count($reve)/2;
+for($i=0;$i<$times;$i++){
+    $tmp=$reve[$i];
+    $reve[$i]=$reve[count($reve)-$i-1];
+    $reve[count($reve)-$i-1]=$tmp;
+}
+print("<br>");
+print_r($reve)
+?>
